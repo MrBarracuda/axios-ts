@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import {FetchResponse} from "../globalTypes";
 
 
-export const useFetch = (endpoint: string):FetchResponse => {
+export const useFetch = (endpoint: string): FetchResponse => {
     const [requestInfo, setRequestInfo] = useState<FetchResponse>({
         data: null,
         error: null,

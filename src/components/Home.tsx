@@ -1,19 +1,8 @@
-
 import {useFetch} from "../hooks/useFetch";
 import {BlogList} from "./BlogList/BlogList";
-<<<<<<< Updated upstream
-import {FetchResponse} from "../globalTypes";
-=======
 import {Search} from "./Search/Search";
 import {useState} from "react";
->>>>>>> Stashed changes
 
-// type Blogs = {
-//     title: string
-//     body: string
-//     author: string
-//     id: number
-// }
 
 export const Home = () => {
     const [searchInput, setSearchInput] = useState('');
