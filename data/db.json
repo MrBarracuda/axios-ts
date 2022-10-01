@@ -11,6 +11,15 @@
       "body": "fffffffffffffffff",
       "author": "yoshi",
       "id": 2
+<<<<<<< Updated upstream
+=======
+    },
+    {
+      "title": "Gem Dev",
+      "body": "asd asd ads asda asd asd asd ",
+      "author": "mario",
+      "id": 3
+>>>>>>> Stashed changes
     }
   ]
 }
