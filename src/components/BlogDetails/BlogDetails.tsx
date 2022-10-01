@@ -8,10 +8,9 @@ import {BLOGS_ENDPOINT} from "../../constants";
 
 export const BlogDetails = () => {
     const {id} = useParams()
-    const exactBlog = `${BLOGS_ENDPOINT}/${id}`
     const navigate = useNavigate()
-    const {data: blog, error, isLoading} = useFetch(exactBlog)
-    const handleDelete = () => api.delete(exactBlog).then(() => navigate('/'))
+    const {data: blog, error, isLoading} = useFetch(BLOGS_ENDPOINT + id)
+    const handleDelete = () => api.delete(BLOGS_ENDPOINT + id).then(() => navigate('/'))
 
     return (
         <BlogPreview>
