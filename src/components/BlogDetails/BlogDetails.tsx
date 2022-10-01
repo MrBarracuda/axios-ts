@@ -1,9 +1,8 @@
-import {useParams} from "react-router-dom";
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, useParams} from "react-router-dom";
 import {useFetch} from "../../hooks/useFetch";
 import api from '../../services/api/baseURL'
 
-import {BlogPreview} from "./BlogDetails.styles";
+import {StyledBlogDetails} from "./BlogDetails.styles";
 import {BLOGS_ENDPOINT} from "../../constants";
 
 export const BlogDetails = () => {
@@ -13,7 +12,7 @@ export const BlogDetails = () => {
     const handleDelete = () => api.delete(BLOGS_ENDPOINT + id).then(() => navigate('/'))
 
     return (
-        <BlogPreview>
+        <StyledBlogDetails>
             {isLoading && <div>Loading...</div>}
             {error && <div>{error}</div>}
             {blog && (
@@ -24,7 +23,7 @@ export const BlogDetails = () => {
                     <button onClick={handleDelete}>delete blog</button>
                 </article>
             )}
-        </BlogPreview>
+        </StyledBlogDetails>
     )
 
 }

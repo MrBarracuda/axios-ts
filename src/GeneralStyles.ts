@@ -6,12 +6,12 @@ export const GeneralStyles = createGlobalStyle`
     margin: 0;
     box-sizing: border-box;
   }
+
   body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
     scroll-behavior: smooth;
-    text-rendering: optimizeSpeed;
     line-height: 1.5;
     font-family: 'Inter', sans-serif;
     background: #fff6f6;
@@ -33,9 +33,11 @@ export const GeneralStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
   }
+
   li {
     list-style: none;
   }
+
   a {
     color: inherit;
     text-decoration: none;
