@@ -1,14 +1,21 @@
 import {StyledSearch} from "./Search.styles";
 
 type TypeSearch = {
-    searchInput: string
-    searchItems: any
+    searchInputValue: string
+    setSearchItems: any
 }
 
-export const Search = ({searchItems, searchInput}: TypeSearch) => (
-    <StyledSearch>
-        <input placeholder='Find the blog' type="text" name={'search'} value={searchInput}
-               onChange={event => searchItems(event.target.value)}/>
-        <button type={'button'} name={'search'}>Go!</button>
-    </StyledSearch>
-);
+export const Search = ({setSearchItems, searchInputValue}: TypeSearch) => {
+
+    const onChange = (event: { target: { value: string; }; }) => setSearchItems(event.target.value)
+
+    return (
+        <StyledSearch>
+            <input placeholder='Find the blog' type="text" name={'search'} value={searchInputValue}
+                   onChange={onChange}/>
+            <button type={'button'} name={'search'}>Go!</button>
+        </StyledSearch>
+    )
+}
+
+

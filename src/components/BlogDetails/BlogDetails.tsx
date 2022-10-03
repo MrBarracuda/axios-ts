@@ -15,7 +15,7 @@ export const BlogDetails = () => {
     return (
         <StyledBlogDetails>
             {isLoading && <div>Loading...</div>}
-            {error && <div>{error}</div>}
+            {error?.message && <div>{error.message}</div>}
             {blog && (
                 <article>
                     <h3>{blog.title}</h3>
