@@ -1,6 +1,11 @@
 import {StyledSearch} from "./Search.styles";
 
-export const Search = ({searchItems, searchInput}:any) => (
+type TypeSearch = {
+    searchInput: string
+    searchItems: any
+}
+
+export const Search = ({searchItems, searchInput}: TypeSearch) => (
     <StyledSearch>
         <input placeholder='Find the blog' type="text" name={'search'} value={searchInput}
                onChange={event => searchItems(event.target.value)}/>
