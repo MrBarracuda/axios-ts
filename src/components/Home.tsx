@@ -10,11 +10,11 @@ export const Home = () => {
     const [searchInput, setSearchInput] = useState('');
     const [filteredBlogs, setFilteredBlogs] = useState<TypeBlog[]>([]);
 
-    const {data: blogs, error, isLoading} = useFetch(BLOGS_ENDPOINT)
+    const {data: blogs, error, isLoading} = useFetch<TypeBlog[]>(BLOGS_ENDPOINT)
 
     const searchItems = (searchValue: string) => {
         setSearchInput(searchValue);
-        if (searchInput !== '') {
+        if (searchInput !== '' && blogs) {
             const filterBlogs: TypeBlog[] = blogs.filter((blog: TypeBlog) =>
                 Object.values(blog)
                     .join('')
