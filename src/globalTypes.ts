@@ -1,12 +1,22 @@
-export type FetchResponse = {
-    data: any
-    error: any
+import {ChangeEvent} from "react";
+
+export type FetchResponse<TData, TError = Error> = {
+    data: TData | null
+    error: TError | null
     isLoading: boolean
 }
 
-export type TypeBlog = {
+export type CreateBlog = {
     title: string
     body: string
     author: string
+}
+
+export interface Blog extends CreateBlog {
     id: number
 }
+
+export type onChangeEvents =
+    ChangeEvent<HTMLInputElement>
+    | ChangeEvent<HTMLTextAreaElement>
+    | ChangeEvent<HTMLSelectElement>

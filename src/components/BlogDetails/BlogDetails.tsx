@@ -4,17 +4,18 @@ import api from '../../services/api/baseURL'
 
 import {StyledBlogDetails} from "./BlogDetails.styles";
 import {BLOGS_ENDPOINT} from "../../constants";
+import {Blog} from "../../globalTypes";
 
 export const BlogDetails = () => {
     const {id} = useParams()
     const navigate = useNavigate()
-    const {data: blog, error, isLoading} = useFetch(BLOGS_ENDPOINT + id)
+    const {data: blog, error, isLoading} = useFetch<Blog>(BLOGS_ENDPOINT + id)
     const handleDelete = () => api.delete(BLOGS_ENDPOINT + id).then(() => navigate('/'))
 
     return (
         <StyledBlogDetails>
             {isLoading && <div>Loading...</div>}
-            {error && <div>{error}</div>}
+            {error?.message && <div>{error.message}</div>}
             {blog && (
                 <article>
                     <h3>{blog.title}</h3>

@@ -6,11 +6,11 @@ export const StyledBlogDetails = styled.div`
   color: ${PRIMARY_COLOR};
   margin-bottom: 10px;
 
-  & div {
+  div {
     margin: 20px 0;
   }
 
-  & button {
+  button {
     background: ${PRIMARY_COLOR};
     color: #fff;
     border: 0;

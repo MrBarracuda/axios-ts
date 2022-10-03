@@ -6,18 +6,18 @@ export const StyledCreate = styled.div`
   margin: 0 auto;
   text-align: center;
 
-  & label {
+  label {
     text-align: left;
     display: block;
   }
   
-  & h2 {
+  h2 {
     font-size: 20px;
     color: ${PRIMARY_COLOR};
     margin-bottom: 30px;
   }
   
-  & input, & textarea, & select {
+  input, textarea, select {
     width: 100%;
     padding: 6px 10px;
     margin: 10px 0;
@@ -26,7 +26,7 @@ export const StyledCreate = styled.div`
     display: block;
   }
   
-  & button {
+  button {
     background-color: #f1356d;
     color: #fff;
     border: 0;

@@ -10,7 +10,7 @@ export const BlogPreview = styled.div`
     box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
   }
 
-  & h2 {
+  h2 {
     font-size: 20px;
     color: ${PRIMARY_COLOR};
     margin-bottom: 8px;
