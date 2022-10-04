@@ -3,14 +3,14 @@ import styled from "styled-components";
 export const StyledSearch = styled.div`
   margin-bottom: 35px;
 
-  & input {
+  input {
     width: 90%;
     padding: 6px 10px;
     border: 1px solid #ddd;
     box-sizing: border-box;
   }
 
-  & button {
+  button {
     background-color: #f1356d;
     color: #fff;
     border: 0;

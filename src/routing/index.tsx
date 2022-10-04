@@ -10,7 +10,7 @@ export const AppRoutes = () => {
         <>
             <Routes>
                 <Route index element={<Home/>}/>
-                <Route path={'create'} element={<Create />}/>
+                <Route path={'create'} element={<Create/>}/>
                 <Route path={'blogs/:id'} element={<BlogDetails/>}/>
                 <Route path={'*'} element={<NotFound/>}/>
             </Routes>

@@ -6,7 +6,6 @@ type TypeSearch = {
 }
 
 export const Search = ({setSearchItems, searchInputValue}: TypeSearch) => {
-
     const onChange = (event: { target: { value: string; }; }) => setSearchItems(event.target.value)
 
     return (
