@@ -8,6 +8,7 @@ export const useFetch = <TData>(endpoint: string): FetchResponse<TData> => {
         error: null,
         isLoading: false,
     })
+
     useEffect(() => {
         setRequestInfo(prev => ({...prev, isLoading: true}))
         api(endpoint)

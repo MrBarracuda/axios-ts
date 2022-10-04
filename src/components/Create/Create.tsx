@@ -1,13 +1,15 @@
-import {FormEvent, useState} from "react";
+import {FormEvent, useContext, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import api from '../../services/api/baseURL'
 
-import {CreateBlog, onChangeEvents} from "../../globalTypes";
+import {Blog, CreateBlog, onChangeEvents} from "../../globalTypes";
 import {BLOGS_ENDPOINT} from "../../constants";
 import {StyledCreate} from "./Create.styles";
+import {BlogsContext} from "../../contexts/BlogsContext";
 
 
-export const Create = ({blogs, error, isLoading}: any) => {
+export const Create = () => {
+    const {data: blogs, error, isLoading} = useContext(BlogsContext)
     const navigate = useNavigate()
     const [fields, setFields] = useState<CreateBlog>({
         title: '',
@@ -28,7 +30,7 @@ export const Create = ({blogs, error, isLoading}: any) => {
 
         <StyledCreate>
             {isLoading && <div>Loading...</div>}
-            {error && <div>{error}</div>}
+            {error && <div>{error?.message}</div>}
             {blogs && (
                 <form onSubmit={onSubmit}>
                     <label>Blog title</label>
@@ -39,8 +41,8 @@ export const Create = ({blogs, error, isLoading}: any) => {
                               onChange={onChange}/>
                     <label>Blog author</label>
                     <select name={'author'} onChange={onChange}>
-                        {/*for now gonna leave it as it is*/}
-                        {blogs.map((blog: any, index: number) => (
+                        // TODO make that users can create a new author and add em to db (MAYBE with different endpoint)
+                        {blogs.map((blog: Blog, index: number) => (
                             <option value={blog.author} key={index}>{blog.author}</option>))}
                     </select>
                     <button>Add Blog</button>
