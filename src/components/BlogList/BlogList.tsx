@@ -3,8 +3,14 @@ import {Blog} from "../../globalTypes";
 import {BLOGS_ENDPOINT} from "../../constants";
 import {BlogPreview} from "./BlogList.styles";
 
+// still not working, but I'm getting closer
 
-export const BlogList = ({blogs}: any) => (
+// why it wouldn't work before? With type Blog[] it was giving me an error
+// don't know how and why, but it works now
+type BlogListProps = {
+    blogs: Blog[]
+}
+export const BlogList = ({blogs}: BlogListProps) => (
     <>
         {blogs?.map((blog: Blog) => (
             <BlogPreview key={blog.id}>
